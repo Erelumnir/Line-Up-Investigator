@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23846546097911798}
   - component: {fileID: 136207714454661270}
   - component: {fileID: 114414857509419114}
+  - component: {fileID: 114903838812083484}
   m_Layer: 0
   m_Name: Perp_1 (1)
   m_TagString: Untagged
@@ -177,13 +178,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141514160321318}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68b56422e351f9a438ef72290923bf71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 1, g: 0.2392157, b: 0.627451, a: 1}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
+  gameManager: {fileID: 0}
+--- !u!114 &114903838812083484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141514160321318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294286a38f6aaa24a871d6ccf5f167a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perpName: Pjotr
+  isGuilty: 0
 --- !u!136 &136207714454661270
 CapsuleCollider:
   m_ObjectHideFlags: 1

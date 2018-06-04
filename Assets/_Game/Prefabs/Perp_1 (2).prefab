@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23229287138034854}
   - component: {fileID: 136698453862407722}
   - component: {fileID: 114163295954877752}
+  - component: {fileID: 114346135150651052}
   m_Layer: 0
   m_Name: Perp_1 (2)
   m_TagString: Untagged
@@ -177,13 +178,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121163227229078}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68b56422e351f9a438ef72290923bf71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.12941177, g: 0.83921576, b: 0.73333335, a: 1}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
+  gameManager: {fileID: 0}
+--- !u!114 &114346135150651052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121163227229078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294286a38f6aaa24a871d6ccf5f167a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perpName: Santiago
+  isGuilty: 1
 --- !u!136 &136698453862407722
 CapsuleCollider:
   m_ObjectHideFlags: 1
