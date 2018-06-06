@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 		if (selectedPerps != null) {
 			// Destroy all GameObjects in List
 			foreach (GameObject selectedPerp in selectedPerps) {
-				perpA = selectedPerps.GetComponents<PerpAttributes> ();
+				perpA = selectedPerp.GetComponent<PerpAttributes> ();
 
 				// Check if the perp is guilty
 				if (perpA.isGuilty) {
