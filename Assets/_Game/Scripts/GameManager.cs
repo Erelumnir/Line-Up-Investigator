@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Lose(){
-		//LOSE
+		// LOSE
 		Debug.Log("You're fired!");
 	}
 }
