@@ -50,7 +50,7 @@ public class PerpSelection : MonoBehaviour {
 		rend.material.color = selectedColor;
 		IsSelected = true;
 		gameManager.selectedPerps.Add(obj);
-		Debug.Log ("GameObject Added");
+		//Debug.Log ("GameObject Added");
 	}
 
 	void RemoveSelection(GameObject obj){
@@ -58,6 +58,6 @@ public class PerpSelection : MonoBehaviour {
 		rend.material.color = startColor;
 		IsSelected = false;
 		gameManager.selectedPerps.Remove(obj);
-		Debug.Log ("GameObject Removed");
+		//Debug.Log ("GameObject Removed");
 	}
 }

@@ -28,6 +28,7 @@ public class EvidenceManager : MonoBehaviour {
 
     private bool hasClicked = false;
     private bool isActive = false;
+	private bool isLerping = false;
 
     void Start()
     {
@@ -37,15 +38,21 @@ public class EvidenceManager : MonoBehaviour {
 
     void Update()
     {
-        if (isActive && hasClicked)
+        if (isActive)
         {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, newCameraPos.position, cameraSpeed * Time.deltaTime);
-            StartCoroutine(ShowEvidence());
+			//isLerping = true;
+			//StartCoroutine(ShowEvidence());
         }
-        else if (!hasClicked && !isActive)
+        /*else if (!isActive)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, oldCameraPos.position, cameraSpeed * Time.deltaTime);
-        }
+			HideEvidence ();
+        }*/
+		
+		//cam.transform.position = Vector3.MoveTowards (cam.transform.position, newCameraPos.position, 1f);
+		//if (isLerping) {
+		cam.transform.position = Vector3.Lerp(cam.transform.position, newCameraPos.position, cameraSpeed* Time.deltaTime);
+		//}
     }
 
     void OnMouseEnter()
@@ -55,6 +62,7 @@ public class EvidenceManager : MonoBehaviour {
 
     void OnMouseDown()
     {
+		print ("Hoi");
         if (!hasClicked)
         {
             isActive = true;
@@ -76,18 +84,27 @@ public class EvidenceManager : MonoBehaviour {
     IEnumerator ShowEvidence()
     {
         // Show Witness Statements
+		yield return new WaitForSeconds(1);
         evidence1.text = "Evidence A: Peter is Santiago's brother.";
         yield return new WaitForSeconds(5);
-        evidence1.text = "";
         evidence2.text = "Evidence B: Peter's car has been sighted near the house.";
         yield return new WaitForSeconds(5);
-        evidence2.text = "";
         evidence3.text = "Evidence C: Peter was working with Alberto at the time of the murder.";
         yield return new WaitForSeconds(5);
-        evidence3.text = "";
         evidence4.text = "Evidence D: Peter got picked up by Alberto.";
         yield return new WaitForSeconds(5);
-        evidence4.text = "";
         evidence5.text = "Evidence E: Sevilla and Santiago claim to be both at home.";
+		yield return new WaitForSeconds (5);
+		HideEvidence ();
     }
+
+	void HideEvidence()
+	{
+		evidence1.text = "";
+		evidence2.text = "";
+		evidence3.text = "";
+		evidence4.text = "";
+		evidence5.text = "";
+		StopCoroutine (ShowEvidence ());
+	}
 }

@@ -29,14 +29,14 @@ public class LineUpManager : MonoBehaviour {
 
     void Update()
     {
-        if (isActive && hasClicked)
-        {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, newCameraPos.position, cameraSpeed * Time.deltaTime);
-        }
-        else if (!hasClicked && !isActive)
-        {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, oldCameraPos.position, cameraSpeed * Time.deltaTime);
-        }
+//        if (isActive && hasClicked)
+//        {
+//            cam.transform.position = Vector3.Lerp(cam.transform.position, newCameraPos.position, cameraSpeed * Time.deltaTime);
+//        }
+//        else if (!hasClicked && !isActive)
+//        {
+//            cam.transform.position = Vector3.Lerp(cam.transform.position, oldCameraPos.position, cameraSpeed * Time.deltaTime);
+//        }
     }
 
     void OnMouseEnter()

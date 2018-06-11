@@ -33,6 +33,7 @@ public class WitnessManager : MonoBehaviour {
 
     void Update()
     {
+		 	
         if (isActive && hasClicked)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, newCameraPos.position, cameraSpeed * Time.deltaTime);
@@ -41,7 +42,9 @@ public class WitnessManager : MonoBehaviour {
         else if (!hasClicked && !isActive)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, oldCameraPos.position, cameraSpeed * Time.deltaTime);
+			HideStatements ();
         }
+
     }
 
     void OnMouseEnter()
@@ -70,14 +73,21 @@ public class WitnessManager : MonoBehaviour {
 
     IEnumerator ShowStatement() {
         // Show Witness Statements
+		yield return new WaitForSeconds(1);
         statement1.text = "Witness 1: I saw a blue capsule leaving the house!";
         yield return new WaitForSeconds(5);
-        statement1.text = "";
         statement2.text = "Witness 2: I heard a motor pull up to the house.";
         yield return new WaitForSeconds(5);
-        statement2.text = "";
         statement3.text = "Witness 3: I didn't see or hear anything.";
         yield return new WaitForSeconds(5);
-        statement3.text = "";
+		HideStatements ();
     }
+
+	void HideStatements()
+	{
+		statement1.text = "";
+		statement2.text = "";
+		statement3.text = "";
+		StopCoroutine (ShowStatement ());
+	}
 }

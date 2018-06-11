@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
 	[Header ("Setup")]
 	public List <GameObject> selectedPerps;
-
+	public Text perpName;
 	public PerpAttributes perpA;
 
 	void Update(){
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour {
 					suspectCounter -= 1;
 					selectedPerps.Remove (selectedPerp);
 					Destroy (selectedPerp, 0.5f);
+					Destroy (perpName, 0.5f);
 				} else if (!perpA.isGuilty) {
 					Lose ();
 				}
