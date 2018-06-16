@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EvidenceManager : MonoBehaviour {
+public class MorgueManager : MonoBehaviour {
 
-    // Variables
     [Header("Setup")]
     public CameraController camC;
-    public Transform EvidenceZoom;
-    public Canvas evidenceCanvas;
+    public Transform morgueZoom;
+    public Canvas morgueCanvas;
 
     [Header("Color Setup")]
     public Color hoverColor;
@@ -28,14 +26,18 @@ public class EvidenceManager : MonoBehaviour {
     void OnMouseEnter()
     {
         rend.material.color = hoverColor;
-        evidenceCanvas.gameObject.SetActive(true);
+        morgueCanvas.gameObject.SetActive(true);
     }
-
+    void OnMouseExit()
+    {
+        rend.material.color = startColor;
+        morgueCanvas.gameObject.SetActive(false);
+    }
     void OnMouseDown()
     {
         if (hasReset == false)
         {
-            camC.newCamPos = EvidenceZoom;
+            camC.newCamPos = morgueZoom;
             hasReset = true;
         }
         else if (hasReset == true)
@@ -43,11 +45,5 @@ public class EvidenceManager : MonoBehaviour {
             camC.newCamPos = camC.oldCamPos;
             hasReset = false;
         }
-    }
-
-    void OnMouseExit()
-    {
-        rend.material.color = startColor;
-        evidenceCanvas.gameObject.SetActive(false);
     }
 }

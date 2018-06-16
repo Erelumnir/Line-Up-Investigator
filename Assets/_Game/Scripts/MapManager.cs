@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EvidenceManager : MonoBehaviour {
+public class MapManager : MonoBehaviour {
 
     // Variables
     [Header("Setup")]
     public CameraController camC;
-    public Transform EvidenceZoom;
-    public Canvas evidenceCanvas;
+    public Transform mapZoom;
+    public Canvas mapCanvas;
 
     [Header("Color Setup")]
     public Color hoverColor;
@@ -28,14 +28,14 @@ public class EvidenceManager : MonoBehaviour {
     void OnMouseEnter()
     {
         rend.material.color = hoverColor;
-        evidenceCanvas.gameObject.SetActive(true);
+        mapCanvas.gameObject.SetActive(true);
     }
 
     void OnMouseDown()
     {
         if (hasReset == false)
         {
-            camC.newCamPos = EvidenceZoom;
+            camC.newCamPos = mapZoom;
             hasReset = true;
         }
         else if (hasReset == true)
@@ -48,6 +48,6 @@ public class EvidenceManager : MonoBehaviour {
     void OnMouseExit()
     {
         rend.material.color = startColor;
-        evidenceCanvas.gameObject.SetActive(false);
+        mapCanvas.gameObject.SetActive(false);
     }
 }
