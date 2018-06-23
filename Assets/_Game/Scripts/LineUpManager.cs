@@ -24,14 +24,20 @@ public class LineUpManager : MonoBehaviour {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
-
     void OnMouseEnter()
     {
-        rend.material.color = hoverColor;
-        lineupCanvas.gameObject.SetActive(true);
+        if (hasReset)
+        {
+            return;
+        }
+        else
+        {
+            lineupCanvas.gameObject.SetActive(true);
+            rend.material.color = hoverColor;
+        }
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         if (hasReset == false)
         {

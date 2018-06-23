@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_Game/Scenes/Level_01.unity
+    guid: 7872fce1943a7274199b5ffc3b0ecd45
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_Evidence.unity
+    guid: 69703cd43cba9864a96a94b0173746e8
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_Map.unity
+    guid: 1c95eae9571a7034f8654643904b8f4a
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_Morgue.unity
+    guid: 23bff5a744f6843468d0c7fe7c9f46c0
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_WitnessQuestioning.unity
+    guid: f114dc88ca85f60478d127187ee86a22
   m_configObjects: {}

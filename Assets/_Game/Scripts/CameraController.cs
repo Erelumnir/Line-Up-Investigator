@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour {
         if (newCamPos != null)
         {
             transform.position = Vector3.Lerp(transform.position, newCamPos.position, camSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newCamPos.rotation, camSpeed * Time.deltaTime);
         }
         else
         {
