@@ -1,59 +1,23 @@
 fileFormatVersion: 2
-guid: 497d4ce9a5650a64a84e57dca43b3feb
+guid: 18c52ba557f0f424c89ef0f69bf51212
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: BaseJoint
-    100002: HeadJoint
-    100004: HipJoint
-    100006: LeftLegJoint
-    100008: polyBase
-    100010: polyBody
-    100012: polyEyes
-    100014: polyHead
-    100016: polyLeg_Left
-    100018: polyLeg_Right
-    100020: //RootNode
-    100022: PolyPerp_1
-    100024: RightLegJoint
-    400000: BaseJoint
-    400002: HeadJoint
-    400004: HipJoint
-    400006: LeftLegJoint
-    400008: polyBase
-    400010: polyBody
-    400012: polyEyes
-    400014: polyHead
-    400016: polyLeg_Left
-    400018: polyLeg_Right
-    400020: //RootNode
-    400022: PolyPerp_1
-    400024: RightLegJoint
-    2100000: polyJeans
-    2100002: polyShoes
-    2100004: polyShirt_Over
-    2100006: polyShirt_White
-    2100008: polySkinMat_Dark
-    2100010: polyHairMat_DarkBrown
-    2100012: polyEye_Pupil
-    2100014: polyEye_White
-    2100016: polyEye_Color_brown
-    2300000: polyBase
-    2300002: polyBody
-    2300004: polyEyes
-    2300006: polyLeg_Left
-    2300008: polyLeg_Right
-    3300000: polyBase
-    3300002: polyBody
-    3300004: polyEyes
-    3300006: polyLeg_Left
-    3300008: polyLeg_Right
-    4300000: polyLeg_Left
-    4300002: polyBody
-    4300004: polyLeg_Right
-    4300006: polyBase
-    4300008: polyEyes
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2100000: polyEye_Pupil
+    2100002: polyEye_White
+    2100004: polyEye_Color_Green
+    2100006: polyJeans
+    2100008: polyShoes
+    2100010: polyShirt_White
+    2100012: polyHairMat_DarkBrown
+    2100014: polySkinMat_Light
+    2100016: polyShirt_Over
+    2100018: polyTie_Guy
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: polyEyes
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -129,7 +93,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

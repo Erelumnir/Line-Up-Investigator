@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LineUpManager : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class LineUpManager : MonoBehaviour {
     public Transform LineUpZoom;
     public Canvas lineupCanvas;
     public Button arrestButton;
+    public Canvas inGameUI;
+    public Canvas lineUpUI;
 
     [Header("Color Setup")]
     public Color hoverColor;
@@ -41,16 +44,23 @@ public class LineUpManager : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        if (hasReset == false)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            camC.newCamPos = LineUpZoom;
-            EnableArrest();
-            hasReset = true;
+            if (hasReset == false)
+            {
+                camC.newCamPos = LineUpZoom;
+                EnableButtons();
+                hasReset = true;
+            }
         }
-        else if (hasReset == true)
+    }
+
+    public void resetCameraPosition()
+    {
+        if (hasReset == true)
         {
             camC.newCamPos = camC.oldCamPos;
-            DisableArrest();
+            DisableButtons();
             hasReset = false;
         }
     }
@@ -60,13 +70,18 @@ public class LineUpManager : MonoBehaviour {
         lineupCanvas.gameObject.SetActive(false);
     }
 
-    void EnableArrest()
+    void EnableButtons()
     {
         arrestButton.gameObject.SetActive(true);
+        inGameUI.gameObject.SetActive(false);
+        lineUpUI.gameObject.SetActive(true);
     }
 
-    void DisableArrest()
+    void DisableButtons()
     {
         arrestButton.gameObject.SetActive(false);
+        inGameUI.gameObject.SetActive(true);
+        lineUpUI.gameObject.SetActive(false);
+
     }
 }
