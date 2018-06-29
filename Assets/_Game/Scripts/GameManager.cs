@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,11 +16,16 @@ public class GameManager : MonoBehaviour {
 	public Text perpName;
 	public PerpAttributes perpA;
 
-	void Update(){
-		// Counter Reaches 0
-		if (suspectCounter <= 0){
-			Win ();
-		}
+    void Update() {
+        // Counter Reaches 0
+        if (suspectCounter <= 0) {
+            Win();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 
 	public void ArrestPerps(){
@@ -45,12 +51,24 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Win(){
-		// WIN
+        // WIN
+        SceneManager.LoadScene("Level_01_WinScreen");
 		Debug.Log("You're promoted!");
 	}
 
 	void Lose(){
-		// LOSE
-		Debug.Log("You're fired!");
+        // LOSE
+        SceneManager.LoadScene("Level_01_LoseScreen");
+        Debug.Log("You're fired!");
 	}
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Level_01");
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

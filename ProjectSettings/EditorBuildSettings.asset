@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Level_01_WitnessQuestioning.unity
     guid: f114dc88ca85f60478d127187ee86a22
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_LoseScreen.unity
+    guid: 249d667684d3226418fc373fbfc5a396
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level_01_WinScreen.unity
+    guid: 214d57f40af34d14caf5669864b6c23c
   m_configObjects: {}

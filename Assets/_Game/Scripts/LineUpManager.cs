@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineUpManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class LineUpManager : MonoBehaviour {
     public CameraController camC;
     public Transform LineUpZoom;
     public Canvas lineupCanvas;
+    public Button arrestButton;
 
     [Header("Color Setup")]
     public Color hoverColor;
@@ -42,11 +44,13 @@ public class LineUpManager : MonoBehaviour {
         if (hasReset == false)
         {
             camC.newCamPos = LineUpZoom;
+            EnableArrest();
             hasReset = true;
         }
         else if (hasReset == true)
         {
             camC.newCamPos = camC.oldCamPos;
+            DisableArrest();
             hasReset = false;
         }
     }
@@ -54,5 +58,15 @@ public class LineUpManager : MonoBehaviour {
     {
         rend.material.color = startColor;
         lineupCanvas.gameObject.SetActive(false);
+    }
+
+    void EnableArrest()
+    {
+        arrestButton.gameObject.SetActive(true);
+    }
+
+    void DisableArrest()
+    {
+        arrestButton.gameObject.SetActive(false);
     }
 }
